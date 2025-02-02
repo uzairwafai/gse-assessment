@@ -2,7 +2,7 @@ const { Sequelize, DataTypes } = require("sequelize");
 
 const sequelize = new Sequelize({
   dialect: "sqlite",
-  storage: "./contacts.db", // SQLite 
+  storage: "./contacts.db", // SQLite
   logging: false,
 });
 
@@ -22,13 +22,14 @@ const Contact = sequelize.define(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    primary_contact_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-    },
+    // primary_contact_id: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: true,
+    // },
+    isPrimary: { type: DataTypes.BOOLEAN, defaultValue: false },
   },
   {
-    timestamps: false, 
+    timestamps: false,
   }
 );
 
