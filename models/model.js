@@ -38,4 +38,4 @@ const Contact = sequelize.define(
   console.log("Database & tables created!");
 })();
 
-module.exports = { sequelize, Contact };
+module.exports = { Contact };
